@@ -34,8 +34,6 @@ $("#some-id:hover")*/
 //document.getElementById("some-id")
 /////////////////////////////////////////////////////////////////
 
-
-
 $(document).ready(function () {
 	
 	$("ul").hide();
@@ -43,42 +41,39 @@ $(document).ready(function () {
 		$("ul").toggle()
 	});
 	
-	$('.mentor-info').hide();
+  $('.mentor-info').hide();
 
 	$('li').on('click',(event) =>{
-		$(event.target).addClass('active')
+		
+		var mentor = $(event.target);
+		mentor.toggleClass('active');
 		$('.active').css({color: '#ABCDEF',})
 		$('ul').hide()
 		
-		var mentor = $(event.target).html()
-		console.log(mentor);
+		console.log(mentor.html());
 
 		let charles = $('#charles');
 		let david = $('#david');
 		let isra = $('#isra');
 
-		switch (mentor) {
+		switch (mentor.html()) {
 
-			case 'Carlos Silva':
-				 
+			case 'Carlos Silva':	 
 				charles.slideDown(1000);
 				david.hide(1000);
-				isra.hide(1000);
-				console.log('chale');
+				isra.hide(1000);				
 				break;
 				
 			case 'David Moranchel':
 				david.slideDown();
 				charles.slideUp(1000);
 				isra.hide(1000);
-				console.log('chale2');
 				break;
 
 			case 'Israel Salinas':
 				isra.slideDown();
 				david.hide(1000);
-				charles.hide(1000);		
-				console.log('chale3');
+				charles.hide(1000);	
 				break;
 
 			default:
