@@ -42,7 +42,6 @@ function deleteData(){
 
 $(".container-wrapper").load("views/main.html");
 
-
 $("#adop").click(() =>{
   $(".container-wrapper").load("views/adoption.html")
 });
@@ -54,3 +53,4 @@ $("#loadPet").click(() =>{
 $(".navbar-brand").click(() =>{
   $(".container-wrapper").load("views/main.html")
 });
+
